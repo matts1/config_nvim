@@ -1,0 +1,262 @@
+priority -50
+
+snippet #! "Shebang header for python scripts" b
+#!/usr/bin/env python
+
+$0
+endsnippet
+
+snippet #!2 "Shebang header for python scripts" b
+#!/usr/bin/env python2
+
+$0
+endsnippet
+
+snippet #!3 "Shebang header for python scripts" b
+#!/usr/bin/env python3
+
+$0
+endsnippet
+
+snippet ifmain "ifmain" b
+if __name__ == "__main__":
+    ${0:${VISUAL:main()}}
+endsnippet
+
+snippet with "with" b
+with ${1:expr} as $2:
+    ${0:${VISUAL:pass}}
+$0
+endsnippet
+
+snippet for "for loop" b
+for ${1:item} in ${2:iterable}:
+    ${0:${VISUAL:pass}}
+endsnippet
+
+########################################
+# Class & Special Method Name Snippets #
+########################################
+
+snippet cl "class" b
+class ${1:`!p snip.rv = snip.basename or "name"`}(${2:object}):
+    def __init__(self$3):
+        ${0:pass}
+endsnippet
+
+snippet def "function" b
+def $1($2):
+    ${0:${VISUAL:pass}}
+endsnippet
+
+snippet defm "method" b
+def $1(self$2):
+    ${0:${VISUAL:pass}}
+endsnippet
+
+snippet defc "class method" b
+@classmethod
+def $1(cls$2):
+    ${0:${VISUAL:pass}}
+endsnippet
+
+snippet defs "static method" b
+@staticmethod
+def $1($2):
+    ${0:${VISUAL:pass}}
+endsnippet
+
+# doesn't expand when there is a word in front
+snippet /(^|(?<=\W))\./ "self." r
+self.
+endsnippet
+
+snippet from "from module import name" b
+from ${1:module} import ${2:Stuff}
+endsnippet
+
+snippet imp "import name" b
+import ${1:module}
+endsnippet
+
+
+snippet prop "Property" b
+@property
+def ${1:name}(self):
+    ${2:return self._$1}$0
+
+@$1.setter
+def $1(self, value):
+    ${3:self._$1 = value}
+endsnippet
+
+
+####################
+# If / Else / Elif #
+####################
+snippet if "If" b
+if ${1:True}:
+    ${0:${VISUAL:pass}}
+endsnippet
+
+snippet ife "If / Else" b
+if ${1:True}:
+    ${2:${VISUAL:pass}}
+else:
+    ${0:pass}
+endsnippet
+
+snippet el "Else" b
+else:
+    ${0:pass}
+endsnippet
+
+snippet eli "Elif"
+    ${0:pass}
+endsnippet
+
+snippet ifee "If / Elif / Else" b
+if ${1:True}:
+    ${2:${VISUAL:pass}}
+elif ${3:True}:
+    ${4:pass}
+else:
+    ${0:pass}
+endsnippet
+
+snippet ifi "If inline" w
+${1:None} if ${1:True} else ${3:None}
+endsnippet
+
+
+##########################
+# Try / Except / Finally #
+##########################
+snippet try "Try / Except" b
+try:
+    ${1:${VISUAL:pass}}
+except ${2:Exception} as ${3:e}:
+    ${4:raise $3}
+endsnippet
+
+snippet trye "Try / Except / Else" b
+try:
+    ${1:${VISUAL:pass}}
+except ${2:Exception} as ${3:e}:
+    ${4:raise $3}
+else:
+    ${5:pass}
+endsnippet
+
+snippet tryf "Try / Except / Finally" b
+try:
+    ${1:${VISUAL:pass}}
+except ${2:Exception} as ${3:e}:
+    ${4:raise $3}
+finally:
+    ${5:pass}
+endsnippet
+
+snippet tryef "Try / Except / Else / Finally" b
+try:
+    ${1:${VISUAL:pass}}
+except${2: ${3:Exception} as ${4:e}}:
+    ${5:raise}
+else:
+    ${6:pass}
+finally:
+    ${7:pass}
+endsnippet
+
+
+######################
+# Assertions & Tests #
+######################
+
+snippet ae "Assert equal" b
+self.assertEqual(${1:${VISUAL:first}},${2:second})
+endsnippet
+
+snippet at "Assert True" b
+self.assertTrue(${1:${VISUAL:expression}})
+endsnippet
+
+snippet af "Assert False" b
+self.assertFalse(${1:${VISUAL:expression}})
+endsnippet
+
+snippet aae "Assert almost equal" b
+self.assertAlmostEqual(${1:${VISUAL:first}},${2:second})
+endsnippet
+
+snippet ar "Assert raises" b
+self.assertRaises(${1:exception}, ${2:${VISUAL:func}}${3/.+/, /}${3:arguments})
+endsnippet
+
+snippet an "Assert is None" b
+self.assertIsNone(${1:${VISUAL:expression}})
+endsnippet
+
+snippet ann "Assert is not None" b
+self.assertIsNotNone(${1:${VISUAL:expression}})
+endsnippet
+
+snippet testcase "pyunit testcase" b
+class Test${1:Class}(${2:unittest.TestCase}):
+
+    `!p snip.rv = triple_quotes(snip)`${3:Test case docstring.}`!p snip.rv = triple_quotes(snip)`
+
+    def setUp(self):
+        ${4:pass}
+
+    def tearDown(self):
+        ${5:pass}
+
+    def test_${6:name}(self):
+        ${7:${VISUAL:pass}}
+endsnippet
+
+snippet wh
+while ${1:condition}:
+    ${0:${VISUAL}}
+endsnippet
+ 
+# dowh - does the same as do...while in other languages
+snippet dowh
+while True:
+    ${1}
+    if ${0:condition}:
+        break
+endsnippet
+ 
+# Lambda
+snippet ld
+lambda ${2:vars}: ${0:None}
+endsnippet
+
+# logging
+snippet glog "Get logger"
+import logging
+logger = logging.getLogger(${1:__name__})
+endsnippet
+ 
+snippet le
+logger.error(${1:msg})
+endsnippet
+ 
+# conflict with lambda=ld, therefor we change into Logger.debuG
+snippet lg
+logger.debug(${1:msg})
+endsnippet
+ 
+snippet lw
+logger.warning(${1:msg})
+endsnippet
+ 
+snippet lc
+logger.critical(${1:msg})
+endsnippet
+ 
+snippet li
+logger.info(${1:msg})
+endsnippet

@@ -1,0 +1,28 @@
+snippet beg "$1.begin(), $1.end()"
+${1}.begin(), ${1}.end()
+endsnippet
+
+snippet cbeg "$1.cbegin(), $1.cend()"
+${1}.cbegin(), ${1}.cend()
+endsnippet
+
+snippet try
+try {
+  ${VISUAL}$0
+} catch(${1}) {
+}
+endsnippet
+
+snippet ( "parentheses" w
+(${VISUAL})
+endsnippet
+
+snippet { "braces" w
+{
+  ${0:${VISUAL}}
+}
+endsnippet
+
+snippet /* "Comment" w
+/*${0:${VISUAL}}*/
+endsnippet

@@ -1,0 +1,119 @@
+## if statements
+snippet if "if" b
+if (${1:true}) {
+  ${0:${VISUAL}}
+}
+endsnippet
+
+snippet ifi "if inline" b
+if (${1:true})
+  ${2};
+endsnippet
+
+snippet ife "if else" b
+if (${1:true}) {
+  ${2:${VISUAL}}
+} else {
+  ${0}
+}
+endsnippet
+
+snippet ifei "if else inline" b
+if (${1:true})
+  ${2};
+else
+  ${3};
+endsnippet
+
+snippet el "else"
+else {
+  ${0:${VISUAL}}
+}
+endsnippet
+
+snippet eli "else inline"
+else
+  ${0};
+
+endsnippet
+
+snippet elif "else if"
+else if (${1:true}) {
+  ${0:${VISUAL}}
+}
+endsnippet
+
+snippet elifi "else if inline"
+else if (${1:true})
+  ${0};
+
+endsnippet
+
+
+## loops
+snippet while "while" b
+while (${1:true}) {
+  ${0:${VISUAL}}
+}
+endsnippet
+
+snippet whilei "while inline" b
+while (${1:true})
+  ${0};
+
+endsnippet
+
+snippet forc "const range for loop (for)" b
+for (const auto& ${1:i} : ${2:container}) {
+  ${0:${VISUAL}}
+}
+endsnippet
+
+snippet forci "const range for loop (for) inline" b
+for (const auto& ${1:i} : ${2:container})
+  ${0};
+
+endsnippet
+
+snippet for "range for loop" b
+for (auto& ${1:i} : ${2:container}) {
+  ${0:${VISUAL}}
+}
+endsnippet
+
+snippet fori "range for loop inline" b
+for (auto& ${1:i} : ${2:container})
+  ${0};
+
+endsnippet
+
+snippet forn "for count to n loop" b
+for (${4:int} ${2:i} = 0; $2 < ${1:count}; ${3:++$2}) {
+  ${0:${VISUAL}}
+}
+endsnippet
+
+snippet forni "for count to n loop inline" b
+for (${4:int} ${2:i} = 0; $2 < ${1:count}; ${3:++$2})
+  ${0};
+
+endsnippet
+
+snippet foro "old for loop" b
+for (${1}; ${2}; ${3}) {
+  ${0:${VISUAL}}
+}
+endsnippet
+
+snippet foroi "old for loop inline" b
+for (${1}; ${2}; ${3})
+  ${0};
+
+endsnippet
+
+snippet try
+try {
+  ${0:${VISUAL}}
+} catch(${1}) {
+}
+endsnippet

@@ -1,0 +1,23 @@
+## functions
+snippet fun "function" b
+${1:void} ${2:function_name}($3)
+{
+  ${0:${VISUAL}}
+}
+endsnippet
+
+snippet fun0 "function with 0 params"
+${1:void} ${2:function_name}() {
+  ${0:${VISUAL}}
+}
+endsnippet
+
+snippet ldi "inline lambda"
+[${1}] (${2}) {${3}}
+endsnippet
+
+snippet ld "lambda"
+[${1}] (${2}) {
+  ${0:${VISUAL}}
+}
+endsnippet

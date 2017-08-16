@@ -1,0 +1,9 @@
+# std::cout
+snippet cout
+std::cout << ${1} << '\n';
+endsnippet
+
+snippet cin
+if (!(std::cin >> ${1}))
+  throw std::invalid_argument("${2}");
+endsnippet
