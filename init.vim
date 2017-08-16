@@ -110,7 +110,6 @@ Plug 'ConradIrwin/vim-bracketed-paste'
 
 " Code completion
 Plug 'Sirver/ultisnips'
-Plug 'matts1/vim-snippets'
 let g:ultisnips_python_style='google'
 
 " Set ultisnips triggers
