@@ -330,11 +330,6 @@ vnoremap <silent> # :call VisualSelection('b', '')<CR>
 nnoremap j gj
 nnoremap k gk
 
-
-" Disable highlight when <leader><cr> is pressed
-" but preserve cursor coloring
-nmap <silent> <leader><cr> :noh\|hi Cursor guibg=red<cr>
-
 " Return to last edit position when opening files (You want this!)
 augroup last_edit
     autocmd!
