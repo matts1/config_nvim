@@ -1,0 +1,6 @@
+#!/bin/bash
+
+rm output
+f=$(readlink -f ~/.config/vim-session/__LAST__)
+cat "$f" | egrep -v "[ /]output$" > tmp
+mv tmp "$f"
